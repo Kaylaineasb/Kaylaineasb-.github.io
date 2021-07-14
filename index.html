@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>BLACK FRIDAY</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta name="author" content="Kaylaine" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@300&display=swap" rel="stylesheet">
+
+   
+
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .parte-1 {
+            position: absolute;
+            height: 200%;
+            width: 100%;
+            background-color: black;
+            color: red;
+            font-family: 'Encode Sans SC', sans-serif;
+            font-size: large;
+            text-align: center;
+
+        }
+
+        .titulo-1 {
+            font-size: 200px;
+            background-color: black;
+            color: red;
+            padding: 10px;
+           
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: absolute;
+                top: -150px;
+                left: 250px;
+
+
+        }
+        .titulo-2{
+            font-size: 200px;
+            color: red;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: absolute;
+                top: 45px;
+                left: 400px;
+        }
+
+        .enviar-form {
+            border-radius: 10px;
+            border: 1px solid #000000;
+            padding: 5px;
+            margin: 5px 0;
+
+        }
+
+        .enviar-form:hover {
+            cursor: pointer;
+            background-color: red;
+            color: #FFFFFF;
+
+        }
+
+        .limpar-form {
+            border-radius: 10px;
+            border: 1px solid #000000;
+            padding: 5px;
+            margin: 5px 0;
+        }
+
+       
+
+        .form {
+
+            padding: 20px;
+            width: 300px;
+            height: 400px;
+            float: right;
+            position: relative;
+            background-color: white;
+            border-width: 12px;
+            border-color: rgb(120, 120, 120, 0.5);
+            border-style: solid;
+            background-color: white;
+            background-clip: padding-box;
+            color: red;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            top: 200px;
+            right: 200px;
+            
+            
+            
+                
+        }
+
+        .div-2 {
+            padding: 20px;
+            width: 100%;
+            height: 800px;
+            float: right;
+            position: relative;
+            top: 700px;
+            right: -10px;
+            background-color: white;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+            #imagem-papelao {
+                width: 400px;
+                height: 400px;
+                position: absolute;
+                top: 430px;
+                left: 600px;
+            }
+            .informacoes{
+                padding: 0.2cm;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                justify-content: space-between;
+
+            }
+            #inserir-email{
+                width: 140%;
+                height: 50px;
+                align-items: center;
+                
+            }
+            #inserir-nome{
+        
+                width: 140%;
+                height: 50px;
+                align-items: center;
+               
+            }
+            .enviar-form{
+                
+                width: 145%;
+                height: 50px;  
+                border-radius: 10px;
+                align-items: center;
+            }
+            .titulo-3{
+                text-align: center;
+                font-size: 90px;
+            }
+            .card{
+            display:flex;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        .card1{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        div{
+            
+            
+            width: 200px;
+            font-family: 'Encode Sans SC' , sans-serif;
+            
+            
+            
+        }
+        .my-div1{
+           
+            width:  200px;
+            height: 200px;
+            
+        }
+        .description{
+            text-align: center;
+            margin: 2px 2px;
+            font-size: 10px;
+        }
+        .price{
+            font-weight: 600;
+        }
+        
+        .buy-button{
+        
+            border-radius: 10px;
+            border: 1px solid #000000;
+            padding: 5px;
+            margin: 5px 0;
+        }
+        .buy-button:hover{
+            cursor: pointer;
+            background-color: black;
+            color: #FFFFFF;
+        }
+            
+    </style>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div titulo-principal>
+            <p class="titulo-1">
+                <strong>BLACK</strong> 
+            </p>
+            <p class="titulo-2">
+                FRIDAY
+            </p>
+        
+        </div>
+        <div class="form">
+            <form action="mailto:nome@email.com.br" method="POST" enctype="text/plain">
+            <p><strong>INFORME SEU NOME E SEU E-MAIL PARA FICAR SABENDO DAS PROMOÇÕES.  </strong> </p>
+            <div class="informacoes"> 
+                <strong>  SEU NOME: </strong><br/>
+                <input id="inserir-nome" name="nome" type="text" required/><br/>
+                <strong>  SEU E-MAIL: </strong><br/>
+                <input id="inserir-email" name="email" type="email" required/><br/>
+                <button class="enviar-form" type="button" onclick=" enviarEmail()"  >ENVIAR</button>
+            </div>
+                
+            </form>
+            <script>
+                let nome = document.querySelector('#inserir-nome')
+                let email = document.querySelector(' #inserir-email')
+                function enviarEmail(){
+                    let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
+                    listaUser.push(
+                        {
+                            nomeCad: nome.value,
+                            emailCad: email.value
+                        }
+                    )
+                    localStorage.setItem('listaUser',JSON.stringify(listaUser))
+                    alert ("Confirmado")
+                }
+            </script>
+        </div>
+       
+        <div>
+            
+            <img src="caixaspapelao.png" alt="caixaspapelao" title="caixaspapelao" id="imagem-papelao" />
+        </div>
+        <div class="div-2">
+            <p class="titulo-3">Produtos</p>
+            <div class="card">
+                <div class="card1">
+                <h3>Caneca Groot</h3>
+                <img src="https://http2.mlstatic.com/D_NQ_NP_713114-MLB42405236830_062020-O.jpg" class="my-div1" alt="CANECAGROOT" title="CANECAGROOT"/>
+                <p class="description">Caneca do groot, descrição do material</p>
+                <spam class="price">Preço: R$XXXX,XX</spam>
+                <button class="buy-button">Adicionar ao carrinho</button>
+                 </div>
+                 <div class="card1">
+                    <h3>Caneca TBBT</h3>
+                    <img src="https://cdn.awsli.com.br/600x700/566/566157/produto/27985774/55af667f4f.jpg" class="my-div1" alt="CANECATBBT" title="CANECATBBT"/>
+                    <p class="description">Caneca de The Big Bang Theore, descrição do material</p>
+                    <spam class="price">Preço: R$XXXX,XX</spam>
+                    <button class="buy-button">Adicionar ao carrinho</button>
+                     </div>
+                     <div class="card1">
+                        <h3>Caneca Staion 19</h3>
+                        <img src="https://cdn.awsli.com.br/800x800/1351/1351189/produto/59394312/f3298538cc.jpg" class="my-div1" alt="CANECASTATION19" title="CANECASTATION19"/>
+                        <p class="description">Caneca de Station 19, descrição do material</p>
+                        <spam class="price">Preço: R$XXXX,XX</spam>
+                        <button class="buy-button">Adicionar ao carrinho</button>
+                         </div>
+                         <div class="card1">
+                            <h3>Caneca Groot</h3>
+                            <img src="https://http2.mlstatic.com/D_NQ_NP_713114-MLB42405236830_062020-O.jpg" class="my-div1" alt="CANECAGROOT" title="CANECAGROOT"/>
+                            <p class="description">Caneca do groot, descrição do material</p>
+                            <spam class="price">Preço: R$XXXX,XX</spam>
+                            <button class="buy-button">Adicionar ao carrinho</button>
+                             </div>
+                             <div class="card1">
+                                <h3>Caneca TBBT</h3>
+                                <img src="https://cdn.awsli.com.br/600x700/566/566157/produto/27985774/55af667f4f.jpg" class="my-div1" alt="CANECATBBT" title="CANECATBBT"/>
+                                <p class="description">Caneca de The Big Bang Theore, descrição do material</p>
+                                <spam class="price">Preço: R$XXXX,XX</spam>
+                                <button class="buy-button">Adicionar ao carrinho</button>
+                                 </div>
+                                 <div class="card1">
+                                    <h3>Caneca Staion 19</h3>
+                                    <img src="https://cdn.awsli.com.br/800x800/1351/1351189/produto/59394312/f3298538cc.jpg" class="my-div1" alt="CANECASTATION19" title="CANECASTATION19"/>
+                                    <p class="description">Caneca de Station 19, descrição do material</p>
+                                    <spam class="price">Preço: R$XXXX,XX</spam>
+                                    <button class="buy-button">Adicionar ao carrinho</button>
+                                     </div>
+        </div>
+        
+                
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
